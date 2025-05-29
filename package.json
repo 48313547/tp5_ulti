@@ -3,10 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://48313547.github.io/tp5_ulti",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -24,8 +26,5 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "vite": "^6.3.5"
-  },
-  "homepage": "https://48313547.github.io/tp5_ulti",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+  }
 }
