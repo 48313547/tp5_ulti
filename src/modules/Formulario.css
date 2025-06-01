@@ -5,17 +5,11 @@ body, form, ul, h2, h3, label, input, select, button {
   font-family: Arial, sans-serif;
 }
 
-body {
-  background: #f2c9a0;
-  color: #333;
-  padding: 20px;
-}
-
 form, ul {
   max-width: 600px;
   margin: 0 auto 40px;
   background: #fff;
-  border: 2px solid #e68a00;
+  border: 2px solid #000000;
   border-radius: 8px;
   padding: 20px 30px;
 }
@@ -23,21 +17,23 @@ form, ul {
 form label {
   display: block;
   margin-bottom: 8px;
-  color: #b35b00;
+  color: white;
   font-weight: bold;
+  -webkit-text-stroke: 0.5px black;
+  text-stroke: 0.5px black;
 }
 
 input[type="text"], input[type="number"], select {
   width: 100%;
   padding: 8px 10px;
   margin-bottom: 15px;
-  border: 1px solid #d99a4e;
+  border: 1px solid #000000;
   border-radius: 4px;
-  background: #fff7e6;
+  background: #ffffff;
 }
 
 input[type="text"]:focus, input[type="number"]:focus, select:focus {
-  border-color: #cc7a00;
+  border-color: #000000;
   outline: none;
 }
 
@@ -48,8 +44,10 @@ form > div {
 form div > label {
   display: inline-block;
   margin-right: 8px;
-  color: #b35b00;
+  color: white;
   font-weight: normal;
+  -webkit-text-stroke: 0.5px black;
+  text-stroke: 0.5px black;
 }
 
 form div > select, form div > input[type="number"] {
@@ -57,13 +55,13 @@ form div > select, form div > input[type="number"] {
   min-width: 120px;
   margin-right: 15px;
   vertical-align: middle;
-  background: #fff7e6;
-  border: 1px solid #d99a4e;
+  background: #ffffff;
+  border: 1px solid #000000;
   border-radius: 4px;
 }
 
 button {
-  background: #cc7a00;
+  background: #000000;
   color: white;
   border: none;
   padding: 10px 18px;
@@ -74,12 +72,14 @@ button {
 }
 
 button:hover {
-  background: #b35b00;
+  background: #333333;
 }
 
 h2, h3 {
   text-align: center;
-  color: #b35b00;
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+  text-stroke: 0.5px black;
   margin: 40px 0 20px;
 }
 
@@ -90,8 +90,10 @@ ul {
 
 ul li {
   padding: 8px 12px;
-  border-bottom: 1px solid #d99a4e;
-  color: #7f4e00;
+  border-bottom: 1px solid #000000;
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+  text-stroke: 0.5px black;
   font-weight: normal;
 }
 
@@ -108,10 +110,5 @@ ul li:last-child {
   form div > select, form div > input[type="number"] {
     min-width: 100px;
     margin-right: 10px;
-  }
-
-  button {
-    width: 100%;
-    padding: 12px 0;
   }
 }

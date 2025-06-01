@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import './Formulario.css';
 
 function Formulario() {
   const [datosFormulario, setDatosFormulario] = useState({
@@ -58,7 +59,7 @@ function Formulario() {
     }
 
     if (!datosFormulario.nombre || !datosFormulario.sector || empanadasValidas.length === 0) {
-      alert('Por favor complete nombre, sector y al menos una empanada con cantidad válida.');
+      alert('Por favor complete todo');
       return;
     }
 
@@ -152,7 +153,7 @@ function Formulario() {
         <button type="submit">Terminar pedido</button>
       </form>
 
-      <h2>Resumen total de empanadas por gusto</h2>
+      <h2>Resumen de empanadas por gusto</h2>
       <ul>
         {(() => {
           let hasPedidos = false;
@@ -162,16 +163,16 @@ function Formulario() {
             items.push(<li key={gusto}>{gusto}: {totalPorGusto[gusto]}</li>);
           }
           if (!hasPedidos) {
-            return <li>No hay pedidos aún.</li>;
+            return <li>No hay pedidos</li>;
           }
           return items;
         })()}
       </ul>
 
-      <h2>Pedidos por persona</h2>
+      <h2>Pedido por persona</h2>
       <ul>
         {listaPedidos.length === 0 ? (
-          <li>No hay pedidos aún.</li>
+          <li>No hay pedidos</li>
         ) : (
           listaPedidos.map(function(pedido, idx) {
             return (
