@@ -153,41 +153,47 @@ function Formulario() {
         <button type="submit">Terminar pedido</button>
       </form>
 
-      <h2>Resumen de empanadas por gusto</h2>
-      <ul>
-        {(() => {
-          let hasPedidos = false;
-          const items = [];
-          for (const gusto in totalPorGusto) {
-            hasPedidos = true;
-            items.push(<li key={gusto}>{gusto}: {totalPorGusto[gusto]}</li>);
-          }
-          if (!hasPedidos) {
-            return <li>No hay pedidos</li>;
-          }
-          return items;
-        })()}
-      </ul>
+      <div className="resumen-pedidos-container">
+        <div className="resumen-gustos">
+          <h2>Resumen de empanadas por gusto</h2>
+          <ul>
+            {(() => {
+              let hasPedidos = false;
+              const items = [];
+              for (const gusto in totalPorGusto) {
+                hasPedidos = true;
+                items.push(<li key={gusto}>{gusto}: {totalPorGusto[gusto]}</li>);
+              }
+              if (!hasPedidos) {
+                return <li>No hay pedidos</li>;
+              }
+              return items;
+            })()}
+          </ul>
+        </div>
 
-      <h2>Pedido por persona</h2>
-      <ul>
-        {listaPedidos.length === 0 ? (
-          <li>No hay pedidos</li>
-        ) : (
-          listaPedidos.map(function(pedido, idx) {
-            return (
-              <li key={idx}>
-                <strong>{pedido.nombre} ({pedido.sector}):</strong>
-                <ul>
-                  {pedido.empanadas.map(function(e, i) {
-                    return <li key={i}>{e.cantidad} x {e.gusto}</li>;
-                  })}
-                </ul>
-              </li>
-            );
-          })
-        )}
-      </ul>
+        <div className="resumen-personas">
+          <h2>Pedido por persona</h2>
+          <ul>
+            {listaPedidos.length === 0 ? (
+              <li>No hay pedidos</li>
+            ) : (
+              listaPedidos.map(function(pedido, idx) {
+                return (
+                  <li key={idx}>
+                    <strong>{pedido.nombre} ({pedido.sector}):</strong>
+                    <ul>
+                      {pedido.empanadas.map(function(e, i) {
+                        return <li key={i}>{e.cantidad} x {e.gusto}</li>;
+                      })}
+                    </ul>
+                  </li>
+                );
+              })
+            )}
+          </ul>
+        </div>
+      </div>
     </>
   );
 }
